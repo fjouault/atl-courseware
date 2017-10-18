@@ -1,13 +1,15 @@
-# ATL - The AtlanMod Transformation Language
+# ATL 
 
-AtlanMod team. 
+AtlanMod Transformation Language
 
-IMT Atlantique, LS2N.
+_AtlanMod team_
+
+_IMT Atlantique, LS2N_
 
 <atlanmod-contact@imt-atlantique.fr>
 
 
----
+----
 
 ## Context of this work 
 
@@ -19,7 +21,7 @@ To achieve the goal of large-scale adoption of these MDD techniques, MODELWARE p
 
 The MDD courseware provided here with the status of open source software is produced under the EPL 1.0 license. 
 
----
+----
 
 ## Prerequisites
 
@@ -33,7 +35,7 @@ The MDD courseware provided here with the status of open source software is prod
   - Basic programming concepts
 
 
----
+----
 
 ## Contents
 
@@ -43,7 +45,7 @@ The MDD courseware provided here with the status of open source software is prod
 - Additional considerations
 - Conclusion
 
----
+----
 
 ## Contents
 
@@ -55,7 +57,7 @@ The MDD courseware provided here with the status of open source software is prod
 - Additional considerations
 - Conclusion
 
----
+----
 
 ## Definitions
 
@@ -73,19 +75,19 @@ The MDD courseware provided here with the status of open source software is prod
 </p>
 
 
----
+----
 
-## Operational context: small theory
+## Operational Context: Small Theory
 
 <img src="resources/operational-context.pdf" alt="Drawing" style="width: 600px;"/>
 
----
+----
 
-## Operational context of ATL
+## Operational Context of ATL
 
 <img src="resources/atl-context.pdf" alt="Drawing" style="width: 600px;"/>
 
----
+----
 
 ## Contents
 
@@ -99,7 +101,7 @@ The MDD courseware provided here with the status of open source software is prod
 - Additional considerations
 - Conclusion
 
----
+----
 
 ## ATL Overview
 
@@ -107,7 +109,7 @@ The MDD courseware provided here with the status of open source software is prod
   - **Source models** are **read-only** (they can only be navigated, not modified),
   - **Target models** are **write-only** (they cannot be navigated).
 
----
+----
 
 ## ATL Overview (continued)
 
@@ -120,7 +122,7 @@ The MDD courseware provided here with the status of open source software is prod
     - Action blocks.
 - Recommended programming style: declarative
 
----
+----
 
 ## ATL Overview (continued)
 
@@ -135,9 +137,9 @@ The MDD courseware provided here with the status of open source software is prod
     - An action block (i.e. a sequence of statements),
     - Both.
 
----
+----
 
-## ATL overview (continued)
+## ATL Overview (Continued)
 
 - Applying a declarative rule means:
   - Creating the specified target elements,
@@ -148,9 +150,9 @@ The MDD courseware provided here with the status of open source software is prod
   - **Lazy** rules that are applied as many times for each match as it is referred to from other rules (possibly never for some matches),
   - **Unique** lazy rules that are applied at most once for each match and only if it is referred to from other rules.
 
----
+----
 
-## Declarative rules: source pattern
+## Declarative Rules: Source Pattern
 
 - The source pattern is composed of:
   - A labeled set of types coming from the source metamodels,
@@ -159,9 +161,9 @@ The MDD courseware provided here with the status of open source software is prod
   - Are of the types specified in the source pattern (one element for each type),
   - Satisfy the guard.
 
----
+----
 
-## Declarative rules: target pattern
+## Declarative Rules: Target Pattern
 
 - The target pattern is composed of:
   - A labeled set of types coming from the target metamodels,
@@ -173,7 +175,7 @@ The MDD courseware provided here with the status of open source software is prod
     - First evaluating their value,
     - Then assigning this value to the corresponding property.
 
----
+----
 
 ## Execution Order
 
@@ -182,7 +184,7 @@ The MDD courseware provided here with the status of open source software is prod
     - Remark: the match of a lazy or unique lazy rules must be referred to before the rule is applied.
   - The order in which bindings are applied is not specified.
 
----
+----
 
 ## Execution Order (continued)
 - The execution of declarative rules can however be kept **deterministic**:
@@ -191,7 +193,7 @@ The MDD courseware provided here with the status of open source software is prod
   - Target elements are not navigable
     - The execution of a binding cannot change the value of another.
 
----
+----
 
 ## Contents
 
@@ -207,9 +209,9 @@ The MDD courseware provided here with the status of open source software is prod
 - Additional considerations
 - Conclusion
 
----
+----
 
-## Example: Class to Relational, overview
+## Example: Class to Relational, Overview
 
 - The source metamodel Class is a simplification of class diagrams.
 - The target metamodel Relational is a simplification of the relational model.
@@ -225,13 +227,13 @@ create Mout : Relational from Min : Class;
 http://www.eclipse.org/atl/atlTransformations/#Class2Relational
 
 
----
+----
 
-## Source: the Class metamodel
+## Source: the Class Metamodel
 
 <img src="resources/class-metamodel.pdf" alt="Drawing" style="width: 600px;"/>
 
----
+----
 
 ## The Class Metamodel in EMFatic
 
@@ -256,13 +258,13 @@ package Class;
 	}
 ```
 
----
+----
 
 ## The Relational Metamodel
 
 <img src="resources/relational-metamodel.pdf" alt="Drawing" style="width: 600px;"/>
 
----
+----
 
 ## The Relational Metamodel in EMFatic
 ```
@@ -288,7 +290,7 @@ class Type extends Named {}
 ```
 
 
----
+----
 
 ## Transformation Overview
 
@@ -299,9 +301,9 @@ class Type extends Named {}
     - A column corresponding to the key of the table is created.
 
 
----
+----
 
-## Transformation Overview (continued)
+## Transformation Overview (Continued)
 
 - Auxiliary rules:
   - SingleValuedAttribute2Column:
@@ -311,9 +313,9 @@ class Type extends Named {}
     - One column refers to the key of the table created from the owner class of the attribute,
     - The second column contains the value of the attribute.
 
----
+----
 
-## `Class2Table` rule
+## `Class2Table` Rule
 
 - A Table is created for each Class:
 
@@ -326,9 +328,9 @@ rule Class2Table {
 }
 ```
 
----
+----
 
-## `Class2Table` rule
+## `Class2Table` Rule
 
 - The name of the Table is the name of the Class:
 
@@ -343,9 +345,9 @@ rule Class2Table {
 }
 ```
 
----
+----
 
-## `Class2Table` rule
+## `Class2Table` Rule
 
 - The columns of the table correspond to the single-valued attributes of the class:
 
@@ -364,9 +366,9 @@ rule Class2Table {
 
 - Remark: attributes are automatically resolved into columns by automatic traceability support.
 
----
+----
 
-## `Class2Table` rule
+## `Class2Table` Rule
 
 - Each Table owns a key containing a unique identifier:
 
@@ -388,9 +390,9 @@ rule Class2Table {
 }
 ```
 
----
+----
 
-## `SingleValuedAttribute2Column` rule
+## `SingleValuedAttribute2Column` Rule
 
 - A Column is created for each single-valued Attribute:
 
@@ -406,7 +408,7 @@ rule SingleValuedAttribute2Column {
 
 ```
 
----
+----
 
 ## MultiValuedAttribute2Column
 
@@ -432,7 +434,7 @@ rule MultiValuedAttribute2Column {
 }
 ```
 
----
+----
 
 ## Contents
 
@@ -444,9 +446,9 @@ rule MultiValuedAttribute2Column {
   - ATL in use
 - Conclusion
 
----
+----
 
-## Other ATL features: rule inheritance
+## Other ATL Features: Rule Inheritance
 
 - Rule inheritance, to help structure transformations and reuse rules and patterns:
   - A child rule matches a subset of what its parent rule matches,
@@ -455,7 +457,7 @@ rule MultiValuedAttribute2Column {
     - Initialization of existing elements may be improved or changed,
     - New elements may be created.
 
----
+----
 
 ## Rule Inheritance Syntax
 
@@ -469,7 +471,7 @@ rule R2 extends R1 {
 }
 ```
 
----
+----
 
 ## Refining Mode
 
@@ -479,7 +481,7 @@ rule R2 extends R1 {
     - This is not very elegant.
 	
 
----
+----
 
 ## Refining Model
 - In refining mode, the ATL engine automatically copies unmatched elements.
@@ -493,9 +495,9 @@ module A2A; create OUT : MMA refining IN : MMA;
 ```
 
 
----
+----
 
-## ATL in use
+## ATL in Use
 
 - ATL has been used in a large number of application domains.
 - A library of transformations is available at
@@ -508,9 +510,9 @@ module A2A; create OUT : MMA refining IN : MMA;
   - Industrial development,
   - Etc.
 
----
+----
 
-## ATL in use
+## ATL in Use
 
 - ATL tools and documentation are available at:  https://eclipse.org/atl/
 - Execution engine:
@@ -523,25 +525,25 @@ module A2A; create OUT : MMA refining IN : MMA;
 - Documentation:
   - Starter’s guide, User manual, Installation guide, etc.
 
----
+----
 
-## ATL Development Tools: perspective, editor and outline
+## ATL Development Tools: Perspective, Editor and Outline
 
 <img src="resources/atl-perspective.png" alt="Drawing" style="width: 600px;"/>
 
----
+----
 
-## ATL Development Tools: launch configuration
+## ATL Development Tools: Launch Configuration
 
 <img src="resources/launch-configuration.png" alt="Drawing" style="width: 600px;"/>
 
----
+----
 
-## ATL Development Tools: source-level debugger
+## ATL Development Tools: Source-level Debugger
 
 <img src="resources/atl-debugger.png" alt="Drawing" style="width: 600px;"/>
 
----
+----
 
 ## Contents
 - Introduction
@@ -550,7 +552,7 @@ module A2A; create OUT : MMA refining IN : MMA;
 - Additional considerations
 - **Conclusion**
 
----
+----
 
 ## Conclusion
 
@@ -562,7 +564,7 @@ module A2A; create OUT : MMA refining IN : MMA;
 - ATL has an imperative part:
   - Any problem can be handled.
 
----
+----
 
 ## Thank You!
 
@@ -570,7 +572,7 @@ module A2A; create OUT : MMA refining IN : MMA;
 
 - Comments?
 
----
+----
 
 <!--
 Context of this work

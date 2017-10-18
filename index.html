@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
 
-        <title>ATL</title>
+        <title>OCL</title>
 
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -42,7 +42,7 @@
                 
                     
                         
-    <section data-markdown="slides/index.md"></section>
+    <section data-markdown="slides/index.md" data-separator="^\n---$" data-separator-vertical="^\n----$"></section>
 
 
                     
@@ -51,6 +51,7 @@
             </div>
 
         </div>
+
 
         <script src="bower_components/reveal.js/lib/js/head.min.js"></script>
         <script src="bower_components/reveal.js/js/reveal.js"></script>
@@ -78,6 +79,16 @@
             ]
           });
 
+        </script>
+		  <script>
+			  Reveal.configure({ slideNumber: true });
+
+			  hljs.registerLanguage('ocl', function (hljs) {
+			  return {
+			    case_insensitive: false,
+			    keywords: 'context inv self implies'
+			  }
+		     });
         </script>
     </body>
 
