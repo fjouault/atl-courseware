@@ -71,7 +71,7 @@ The MDD courseware provided here with the status of open source software is prod
   - M3 to M1, M3 to M2, etc.
 </div>
 <p style="position:absolute;  right:0px; top:300px; width:300px;" align="center">
-![](resources/three-levels.pdf)
+![](resources/three-levels.png)
 </p>
 
 
@@ -79,13 +79,13 @@ The MDD courseware provided here with the status of open source software is prod
 
 ## Operational Context: Small Theory
 
-<img src="resources/operational-context.pdf" alt="Drawing" style="width: 600px;"/>
+<img src="resources/operational-context.png" alt="Drawing" style="width: 600px;"/>
 
 ----
 
 ## Operational Context of ATL
 
-<img src="resources/atl-context.pdf" alt="Drawing" style="width: 600px;"/>
+<img src="resources/atl-context.png" alt="Drawing" style="width: 600px;"/>
 
 ----
 
@@ -231,7 +231,7 @@ http://www.eclipse.org/atl/atlTransformations/#Class2Relational
 
 ## Source: the Class Metamodel
 
-<img src="resources/class-metamodel.pdf" alt="Drawing" style="width: 600px;"/>
+<img src="resources/class-metamodel.png" alt="Drawing" style="width: 600px;"/>
 
 ----
 
@@ -262,7 +262,7 @@ package Class;
 
 ## The Relational Metamodel
 
-<img src="resources/relational-metamodel.pdf" alt="Drawing" style="width: 600px;"/>
+<img src="resources/relational-metamodel.png" alt="Drawing" style="width: 600px;"/>
 
 ----
 
