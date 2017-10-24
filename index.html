@@ -81,6 +81,7 @@
 
         </script>
 		  <script>
+			Reveal.addEventListener( 'ready', function() {
 			  Reveal.configure({ slideNumber: true });
 
 			  hljs.registerLanguage('ocl', function (hljs) {
@@ -95,6 +96,7 @@
 			    keywords: 'context inv self implies module'
 			  }
 		     });
+			});
         </script>
     </body>
 
