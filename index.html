@@ -73,10 +73,18 @@
               { src: 'bower_components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
               { src: 'bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
               { src: 'bower_components/reveal.js/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( '[data-html]' ) || !!document.querySelector( 'pre code' ) || !!document.querySelector( '[data-markdown]' ); }, callback: function() {
+			  hljs.registerLanguage('ocl', function (hljs) {
+			  return {
+			    case_insensitive: false,
+			    keywords: 'context inv self implies'
+			  }
+		     });
 			  hljs.registerLanguage('atl', function (hljs) {
 			  return {
 			    case_insensitive: false,
-			    keywords: 'context inv self implies module'
+			    keywords: {
+				keyword: 'context inv self implies module'
+			    }
 			  }
 		     });
 			hljs.initHighlightingOnLoad();
@@ -92,12 +100,6 @@
 			Reveal.addEventListener( 'ready', function() {
 			  Reveal.configure({ slideNumber: true });
 
-			  hljs.registerLanguage('ocl', function (hljs) {
-			  return {
-			    case_insensitive: false,
-			    keywords: 'context inv self implies'
-			  }
-		     });
 			});
         </script>
     </body>
