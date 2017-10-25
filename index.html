@@ -75,14 +75,12 @@
               { src: 'bower_components/reveal.js/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( '[data-html]' ) || !!document.querySelector( 'pre code' ) || !!document.querySelector( '[data-markdown]' ); }, callback: function() {
 			  hljs.registerLanguage('ocl', function (hljs) {
 			  return {
-			    case_insensitive: false,
-			    keywords: 'context inv self implies'
-			  }
-		     });
-			  hljs.registerLanguage('atl', function (hljs) {
-			  return {
 			    cI: false,
-			    k: 'context inv self implies module',
+			    k: {
+				k: 'context inv derive def let in if then else endif and or not mod self',
+				bi: 'Boolean Double Integer String Sequence OrderedSet Set Tuple Bag',
+				l: 'true false OclUndefined|10'
+			    },
 				c: [
 					{
 						cN: 'string',
@@ -95,8 +93,12 @@
 						e: '$',
 					},
 				],
-
 			  }
+		     });
+			  hljs.registerLanguage('atl', function (hljs) {
+			  	var ret = hljs.getLanguage('ocl');
+				ret.k.k += " module create rule from to uses using refining context def lazy unique helper|10 extends abstract do"
+				return ret;
 		     });
 			hljs.initHighlightingOnLoad();
 		 } },
