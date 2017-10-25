@@ -77,9 +77,9 @@
 			  return {
 			    cI: false,
 			    k: {
-				k: 'context inv derive def let in if then else endif and or not mod self',
-				bi: 'Boolean Double Integer String Sequence OrderedSet Set Tuple Bag',
-				l: 'true false OclUndefined|10'
+				keyword: 'context inv derive def let in if then else endif and or not mod self',
+				built_in: 'Boolean Double Integer String Sequence OrderedSet Set Tuple Bag',
+				literal: 'true false OclUndefined|10'
 			    },
 				c: [
 					{
@@ -97,7 +97,7 @@
 		     });
 			  hljs.registerLanguage('atl', function (hljs) {
 			  	var ret = hljs.getLanguage('ocl');
-				ret.k.k += " module create rule from to uses using refining context def lazy unique helper|10 extends abstract do"
+				ret.k.keyword += " module create rule from to uses using refining context def lazy unique helper|10 extends abstract do"
 				return ret;
 		     });
 			hljs.initHighlightingOnLoad();
