@@ -84,7 +84,20 @@
 			    case_insensitive: false,
 			    keywords: {
 				keyword: 'context inv self implies module'
-			    }
+			    },
+				contains: [
+					{
+						className: 'string',
+						begin: /'/,
+						end: /'/,
+					},
+					{
+						className: 'comment',
+						begin: '--',
+						end: '$',
+					},
+				],
+
 			  }
 		     });
 			hljs.initHighlightingOnLoad();
