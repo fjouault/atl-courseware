@@ -319,7 +319,7 @@ class Type extends Named {}
 
 - A Table is created for each Class:
 
-```
+```atl
 rule Class2Table {
   from -- source pattern
     c : Class!Class
