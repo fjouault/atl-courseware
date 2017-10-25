@@ -81,21 +81,18 @@
 		     });
 			  hljs.registerLanguage('atl', function (hljs) {
 			  return {
-			    aliases: ['ATL'],
-			    case_insensitive: false,
-			    keywords: {
-				keyword: 'context inv self implies module'
-			    },
-				contains: [
+			    cI: false,
+			    k: 'context inv self implies module',
+				c: [
 					{
-						className: 'string',
-						begin: /'/,
-						end: /'/,
+						cN: 'string',
+						b: /'/,
+						e: /'/,
 					},
 					{
-						className: 'comment',
-						begin: '--',
-						end: '$',
+						cN: 'comment',
+						b: '--',
+						e: '$',
 					},
 				],
 
